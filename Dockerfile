@@ -34,7 +34,7 @@ ADD  conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 # By default start up apache in the foreground, override with /bin/bash for interative.
 ADD  /sbin/entrypoint.sh /etc/apache2/entrypoint.sh
 RUN  chmod 755 /etc/apache2/entrypoint.sh 
-RUN  /etc/init.d/entrypoint.sh
+#RUN  /etc/init.d/entrypoint.sh
 
 # 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
