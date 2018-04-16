@@ -40,4 +40,4 @@ RUN  chmod 755 /etc/apache2/entrypoint.sh
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 #RUN chgrp -R 0 /etc/apache2 /var/log/apache2 /var/www /etc/php && chmod -R 777 /etc/apache2 /var/log/apache2 /var/www /etc/php
-#USER www-data
+USER www-data:www-data
