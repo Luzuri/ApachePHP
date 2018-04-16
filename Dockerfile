@@ -13,8 +13,6 @@ RUN  apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-
 # Enable apache mods.
 RUN  a2enmod php7.0
 RUN  a2enmod rewrite
-# Iniciar sesion
-USER www-data
 # Update the PHP.ini file, enable <? ?> tags and quieten logging.
 RUN  sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini
 RUN  sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
@@ -30,4 +28,6 @@ RUN  chmod 755 /etc/apache2/entrypoint.sh
 #
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 #
-RUN chown /etc/apache2 /var/log/apache2 /var/www /etc/php
+RUN chown -R www-data /etc/apache2 /var/log/apache2 /var/www /etc/php
+# Iniciar sesion
+USER www-data
