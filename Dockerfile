@@ -37,8 +37,8 @@ RUN  chmod 755 /etc/apache2/entrypoint.sh
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 #wwwwwwwwww
-RUN chgrp -R 0 /etc/apache2 /var/log/apache2 /var/www /etc/php /var/lock/apache2 /var/run
-RUN chmod -R g+rw /etc/apache2 /var/log/apache2 /var/www /etc/php /var/lock/apache2 /var/run
+#RUN chgrp -R 0 /etc/apache2 /var/log/apache2 /var/www /etc/php /var/lock/apache2 /var/run
+#RUN chmod -R g+rw /etc/apache2 /var/log/apache2 /var/www /etc/php /var/lock/apache2 /var/run
 
 # Iniciar sesion
 USER 33
