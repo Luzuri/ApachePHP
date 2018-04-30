@@ -14,7 +14,6 @@ ENV  APACHE_PID_FILE /var/run/apache2.pid
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
  apache2 php7.0 php7.0-mysql libapache2-mod-php7.0 curl lynx-cur
 
-
 # Enable apache mods.
 RUN  a2enmod php7.0
 RUN  a2enmod rewrite
@@ -35,9 +34,9 @@ ADD  /sbin/entrypoint.sh /etc/apache2/entrypoint.sh
 RUN  chmod 755 /etc/apache2/entrypoint.sh 
 
 #RUN  /etc/init.d/entrypoint.sh
-#
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-#
+
+#wwwwwwwwww
 RUN chgrp -R 0 /etc/apache2 /var/log/apache2 /var/www /etc/php /var/lock/apache2 /var/run
 RUN chmod -R g+rw /etc/apache2 /var/log/apache2 /var/www /etc/php /var/lock/apache2 /var/run
 
