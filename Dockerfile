@@ -13,6 +13,7 @@ ENV  APACHE_PID_FILE /var/run/apache2.pid
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
 RUN  apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
      apache2
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 curl lynx-cur
     
 # Enable apache mods.
