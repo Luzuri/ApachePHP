@@ -1,7 +1,7 @@
 FROM ubuntu:xenial
 
 # Expose apache.
-EXPOSE 1050
+EXPOSE 1111
 
 # Manually set up the apache environment variables
 ENV  APACHE_RUN_USER www-data
