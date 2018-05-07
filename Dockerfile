@@ -32,7 +32,7 @@ ADD  conf/ports.conf /etc/apache2/ports.conf
 ADD  conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
          
 # By default start up apache in the foreground, override with /bin/bash for interative.
-CMD ["/usr/local/bin/apache2-foreground"]
+CMD ["/usr/sbin/apache2ctl","-DFOREGROUND"]
 # 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
