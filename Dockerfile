@@ -22,8 +22,6 @@ RUN  a2enmod rewrite
 RUN  sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini
 RUN  sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
 
-
-
 # Copy this repo into place.
 ADD  www /var/www/site/
 ADD  conf/ports.conf /etc/apache2/ports.conf
