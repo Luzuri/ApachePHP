@@ -11,9 +11,8 @@ ENV  APACHE_LOCK_DIR /var/lock/apache2
 ENV  APACHE_PID_FILE /var/run/apache2.pid
 
 # Install apache, PHP, and supplimentary programs. openssh-server, curl, and lynx-cur are for debugging the container.
-RUN  apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 software-properties-common
-RUN add-apt-repository ppa:ondrej/php
-RUN apt-get -y install php7.0 php7.0-mysql libapache2-mod-php7.0 curl lynx-common lynx
+RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+  apache2 php7.0 php7.0-mysql libapache2-mod-php7.0 curl lynx-cur
     
 # Enable apache mods.
 RUN  a2enmod php7.0
