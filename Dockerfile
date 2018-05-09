@@ -32,6 +32,6 @@ ADD  conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 # By default start up apache in the foreground, override with /bin/bash for interative.
 #CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
 # 
-RUN chgrp -R www-data /etc/apache2 /var/log/apache2 /var/www /var/run /etc/php && chmod -R 777 /etc/apache2 /var/run /var/log/apache2 /var/www /etc/php
+RUN chgrp -R 0 /etc/apache2 /var/log/apache2 /var/www /var/run /etc/php && chmod -R g+rw /etc/apache2 /var/run /var/log/apache2 /var/www /etc/php
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 USER 33
