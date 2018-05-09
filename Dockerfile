@@ -34,4 +34,4 @@ ADD  conf/apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 # 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 USER 33
-RUN chgrp -R www-data /etc/apache2 /var/run /var/log/apache2 /var/www /etc/php && chmod -R 777 /etc/apache2 /var/log/apache2 /var/run /var/www /etc/php
+RUN chgrp -R www-data /etc/apache2 /var/log/apache2 /var/www /etc/php && chmod -R 777 /etc/apache2 /var/log/apache2 /var/www /etc/php
